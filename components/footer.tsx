@@ -63,25 +63,33 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Follow Us</h4>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/dmssolars/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@dmssolars"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition"
               >
                 <Youtube className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/dmssolars"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="http://www.linkedin.com/company/dmssolars"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition"
               >
                 <Linkedin className="w-5 h-5" />
