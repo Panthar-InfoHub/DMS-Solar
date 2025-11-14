@@ -130,12 +130,12 @@ export default function Hero() {
                   Get a Free Proposal
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
                 </Button>
-                <Button
+                {/* <Button
                   variant="outline"
                   className="px-8 py-3 rounded-xl text-base font-semibold border-2 border-secondary/30 text-secondary hover:bg-secondary/10 hover:border-secondary/50 hover:shadow-lg bg-transparent transition-all duration-300"
                 >
                   Explore Solutions
-                </Button>
+                </Button> */}
               </div>
 
               <div className="grid grid-cols-3 gap-4 pt-12 animate-fade-in-up stagger-4">

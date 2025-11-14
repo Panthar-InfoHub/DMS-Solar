@@ -255,10 +255,9 @@ export default function Careers() {
             {/* CTC Information */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="currentCTC">Current CTC *</Label>
+                <Label htmlFor="currentCTC">Current CTC</Label>
                 <Input
                   id="currentCTC"
-                  required
                   placeholder="e.g., 5 LPA"
                   value={formData.currentCTC}
                   onChange={(e) => setFormData({ ...formData, currentCTC: e.target.value })}
@@ -266,10 +265,9 @@ export default function Careers() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="expectedCTC">Expected CTC *</Label>
+                <Label htmlFor="expectedCTC">Expected CTC</Label>
                 <Input
                   id="expectedCTC"
-                  required
                   placeholder="e.g., 7 LPA"
                   value={formData.expectedCTC}
                   onChange={(e) => setFormData({ ...formData, expectedCTC: e.target.value })}

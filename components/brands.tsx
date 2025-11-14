@@ -51,7 +51,7 @@ export default function Brands() {
         </div>
 
         {/* Second Row - Scrolls Right to Left */}
-        <div className="flex animate-scroll-right">
+        {/* <div className="flex animate-scroll-right">
           <div className="flex gap-8 shrink-0">
             {[...brands.reverse(), ...brands, ...brands].map((brand, index) => (
               <div
@@ -70,7 +70,7 @@ export default function Brands() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
 
       <style jsx>{`
@@ -93,7 +93,7 @@ export default function Brands() {
         }
 
         .animate-scroll-left {
-          animation: scroll-left 30s linear infinite;
+          animation: scroll-left 7s linear infinite;
         }
 
         .animate-scroll-right {
