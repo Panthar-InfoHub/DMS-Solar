@@ -93,7 +93,7 @@ export default function Brands() {
         }
 
         .animate-scroll-left {
-          animation: scroll-left 7s linear infinite;
+          animation: scroll-left 4s linear infinite;
         }
 
         .animate-scroll-right {
