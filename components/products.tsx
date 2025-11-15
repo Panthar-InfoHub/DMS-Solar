@@ -151,7 +151,7 @@ export default function Products() {
               <div key={index}>
                 <Card
                   onClick={() => setSelectedProduct(index)}
-                  className={`card-hover group bg-gradient-to-br from-primary/5 via-card/40 to-secondary/5 p-8 rounded-2xl border border-border/40 hover:border-primary/40 cursor-pointer transition-all duration-500 ${
+                  className={`card-hover group bg-gradient-to-br from-primary/5 via-card/80 to-secondary/5 p-8 rounded-2xl border border-border/40 hover:border-primary/40 cursor-pointer transition-all duration-500 ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                   }`}
                   style={{
