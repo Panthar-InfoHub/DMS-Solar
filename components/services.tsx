@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ShoppingCart, Lightbulb, Wrench, Cpu, Settings } from "lucide-react"
+import { ShoppingCart, Lightbulb, Wrench, Cpu, Settings } from 'lucide-react'
 
 const services = [
   {
@@ -58,8 +58,18 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden">
-      <div className="absolute top-10 left-10 opacity-5 animate-float">
+    <section id="services" className="py-24 relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 opacity-40 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/website-images/home-page-image-2.jpg')",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/60 to-background/70" />
+      </div>
+
+      <div className="absolute top-10 left-10 opacity-5 animate-float z-10">
         <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="20" y="40" width="110" height="70" fill="currentColor" className="text-green-600" />
           <line x1="20" y1="60" x2="130" y2="60" stroke="white" strokeWidth="2" />
@@ -70,7 +80,7 @@ export default function Services() {
         </svg>
       </div>
 
-      <div className="absolute bottom-20 right-20 opacity-5 animate-float" style={{ animationDelay: "2s" }}>
+      <div className="absolute bottom-20 right-20 opacity-5 animate-float z-10" style={{ animationDelay: "2s" }}>
         <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M50 10 Q30 30 30 50 Q30 70 50 90 Q70 70 70 50 Q70 30 50 10Z"
@@ -81,7 +91,7 @@ export default function Services() {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-20">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

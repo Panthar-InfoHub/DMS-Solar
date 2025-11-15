@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { Zap, Sun, Droplet, Cog, Lightbulb } from "lucide-react"
+import { Zap, Sun, Droplet, Cog, Lightbulb } from 'lucide-react'
 import { useEffect, useRef, useState } from "react"
 
 export default function Products() {
@@ -123,8 +123,18 @@ export default function Products() {
   }, [])
 
   return (
-    <section id="products" className="py-16 md:py-24 bg-gradient-to-b from-background to-card/15" ref={sectionRef}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="products" className="py-16 md:py-24 relative overflow-hidden" ref={sectionRef}>
+      <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 opacity-100  bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/website-images/home-page-image-3.jpg')",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/60 to-background/70" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div
           className={`text-center mb-20 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >

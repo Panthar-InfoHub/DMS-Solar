@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Zap, Award, Wrench, MapPin, ShieldCheck, DollarSign, Headphones } from "lucide-react"
+import { ArrowRight, Zap, Award, Wrench, MapPin, ShieldCheck, DollarSign, Headphones } from 'lucide-react'
 import { useState } from "react"
 import ContactModal from "./contact-modal"
 
@@ -50,8 +50,18 @@ export default function Hero() {
   return (
     <>
       <section id="home" className="relative overflow-hidden pt-20 pb-12 md:pt-28 md:pb-16">
+        <div className="absolute inset-0 z-0">
+          <div
+            className="absolute inset-0 backdrop-opacity-100 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url(/website-images/hero-section.jpg)",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/60 to-background/70" />
+        </div>
+
         {/* Animated solar panels illustration */}
-        <div className="absolute top-20 right-10 opacity-10 animate-float">
+        <div className="absolute top-20 right-10 opacity-10 animate-float z-10">
           <svg width="200" height="150" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="10" y="20" width="180" height="110" fill="currentColor" className="text-primary" />
             <line x1="10" y1="50" x2="190" y2="50" stroke="currentColor" strokeWidth="2" className="text-secondary" />
@@ -63,7 +73,7 @@ export default function Hero() {
         </div>
 
         {/* Sun with rays illustration */}
-        <div className="absolute top-32 left-20 opacity-15 animate-scale-bounce">
+        <div className="absolute top-32 left-20 opacity-15 animate-scale-bounce z-10">
           <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="60" cy="60" r="30" fill="currentColor" className="text-secondary" />
             <line x1="60" y1="5" x2="60" y2="25" stroke="currentColor" strokeWidth="4" className="text-secondary" />
@@ -78,7 +88,7 @@ export default function Hero() {
         </div>
 
         {/* Energy saving leaf illustration */}
-        <div className="absolute bottom-20 left-32 opacity-10 animate-float" style={{ animationDelay: "1.5s" }}>
+        <div className="absolute bottom-20 left-32 opacity-10 animate-float z-10" style={{ animationDelay: "1.5s" }}>
           <svg width="100" height="120" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M50 10 Q80 40 70 80 Q60 100 50 110 Q40 100 30 80 Q20 40 50 10Z"
@@ -89,7 +99,7 @@ export default function Hero() {
           </svg>
         </div>
 
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 z-10">
           <div className="absolute top-0 -right-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl opacity-40 animate-float" />
           <div
             className="absolute -bottom-32 -left-32 w-96 h-96 bg-secondary/15 rounded-full blur-3xl opacity-40 animate-float"
@@ -101,9 +111,9 @@ export default function Hero() {
           />
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/40 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/40 to-background z-10" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left side - existing content */}
             <div className="space-y-8">
@@ -130,12 +140,12 @@ export default function Hero() {
                   Get a Free Proposal
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
                 </Button>
-                {/* <Button
+                <Button
                   variant="outline"
                   className="px-8 py-3 rounded-xl text-base font-semibold border-2 border-secondary/30 text-secondary hover:bg-secondary/10 hover:border-secondary/50 hover:shadow-lg bg-transparent transition-all duration-300"
                 >
                   Explore Solutions
-                </Button> */}
+                </Button>
               </div>
 
               <div className="grid grid-cols-3 gap-4 pt-12 animate-fade-in-up stagger-4">
@@ -156,7 +166,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="hidden lg:block relative h-[700px] overflow-hidden">
+            <div className="hidden lg:block relative h-[550px] overflow-hidden -mt-8">
               <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-background to-transparent z-10" />
               <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent z-10" />
 

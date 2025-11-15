@@ -1,6 +1,6 @@
 "use client"
 
-import { Zap, Wrench, Box } from "lucide-react"
+import { Zap, Wrench, Box } from 'lucide-react'
 import { useEffect, useRef, useState } from "react"
 
 export default function About() {
@@ -47,10 +47,20 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-24 md:py-40 bg-gradient-to-b from-background via-card/20 to-background relative overflow-hidden"
+      className="py-24 md:py-40 relative overflow-hidden"
       ref={sectionRef}
     >
-      <div className="absolute top-20 right-10 opacity-5">
+      <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/images/about-bg.jpeg')",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95" />
+      </div>
+
+      <div className="absolute top-20 right-10 opacity-5 z-10">
         <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="150" cy="150" r="80" fill="currentColor" className="text-secondary" />
           <path d="M150 20 L150 70" stroke="currentColor" strokeWidth="8" className="text-secondary" />
@@ -60,7 +70,7 @@ export default function About() {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div
           className={`text-center mb-20 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
