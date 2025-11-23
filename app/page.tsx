@@ -10,6 +10,7 @@ import Presence from "@/components/presence"
 import Careers from "@/components/careers"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
+import WhatsAppFloat from "@/components/whatsapp-float"
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <Careers />
       <Contact />
       <Footer />
+      <WhatsAppFloat />
     </main>
   )
 }

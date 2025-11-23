@@ -73,7 +73,7 @@ export default function Benefits() {
               },
               {
                 icon: TrendingUp,
-                title: "Rs. 75,000 Cr",
+                title: "Rs. 78  ,000 Cr",
                 description: "Total investment in the scheme",
                 color: "text-green-500",
                 bg: "bg-green-500/10",
