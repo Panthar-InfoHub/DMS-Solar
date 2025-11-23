@@ -6,6 +6,8 @@ import { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { X } from "lucide-react"
+import { sendContactMailToClient, sendContactMailToUser } from "@/helpers/sendmail"
+import { toast } from "sonner";
 
 interface ContactModalProps {
   isOpen: boolean
@@ -40,14 +42,25 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    const data  = {
+      name : formData.name,
+      contact : formData.contact,
+      email : formData.email,
+      category : formData.category,
+      message : formData.message,
+    }
 
-    const subject = encodeURIComponent("New Proposal Request")
-    const body = encodeURIComponent(
-      `New Proposal Request\n\nName: ${formData.name}\nContact: ${formData.contact}\nEmail: ${formData.email}\nCategory: ${formData.category}\nMessage: ${formData.message}`,
-    )
+    sendContactMailToClient(data);
+    sendContactMailToUser(data);
+    toast.success("Your proposal request has been sent successfully!")
+    
+    // const subject = encodeURIComponent("New Proposal Request")
+    // const body = encodeURIComponent(
+    //   `New Proposal Request\n\nName: ${formData.name}\nContact: ${formData.contact}\nEmail: ${formData.email}\nCategory: ${formData.category}\nMessage: ${formData.message}`,
+    // )
 
     // Open email client with pre-filled data
-    window.location.href = `mailto:dmssolar@gmail.com?subject=${subject}&body=${body}`
+    // window.location.href = `mailto:dmssolar@gmail.com?subject=${subject}&body=${body}`
 
     // Reset form after sending
     setFormData({

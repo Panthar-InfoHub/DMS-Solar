@@ -10,6 +10,9 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
+import { sendCareerMail, sendCareerMailToClient } from "@/helpers/sendmail"
+import { send } from "process"
+import { toast } from "sonner";
 
 export default function Careers() {
   const [isOpen, setIsOpen] = useState(false)
@@ -104,13 +107,32 @@ export default function Careers() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
-    const subject = encodeURIComponent("Career Application")
-    const body = encodeURIComponent(
-      `Career Application\n\nName: ${formData.name}\nContact: ${formData.contact}\nEmail: ${formData.email}\nDepartment: ${formData.department}\nDesignation Applied For: ${formData.designation}\nCurrent Designation: ${formData.currentDesignation}\nCurrent CTC: ${formData.currentCTC}\nExpected CTC: ${formData.expectedCTC}\nNotice Period: ${formData.noticePeriod}\nState: ${formData.state}\nCity: ${formData.city}\nExperience & Motivation: ${formData.experience}\nResume: ${fileName}`,
-    )
+    const data = {
+      name : formData.name,
+      contact : formData.contact,
+      email : formData.email,
+      department : formData.department,
+      designation : formData.designation,
+      currentDesignation : formData.currentDesignation,
+      currentCTC : formData.currentCTC,
+      expectedCTC : formData.expectedCTC,
+      noticePeriod : formData.noticePeriod,
+      state : formData.state,
+      city : formData.city,
+      experience : formData.experience,
+      resume : fileName,
+    }
+    sendCareerMail(data);
+    sendCareerMailToClient(data);
+    toast.success("Your career application has been sent successfully!")
+
+    // const subject = encodeURIComponent("Career Application")
+    // const body = encodeURIComponent(
+    //   `Career Application\n\nName: ${formData.name}\nContact: ${formData.contact}\nEmail: ${formData.email}\nDepartment: ${formData.department}\nDesignation Applied For: ${formData.designation}\nCurrent Designation: ${formData.currentDesignation}\nCurrent CTC: ${formData.currentCTC}\nExpected CTC: ${formData.expectedCTC}\nNotice Period: ${formData.noticePeriod}\nState: ${formData.state}\nCity: ${formData.city}\nExperience & Motivation: ${formData.experience}\nResume: ${fileName}`,
+    // )
 
     // Open email client with pre-filled data
-    window.location.href = `mailto:dmssolar@gmail.com?subject=${subject}&body=${body}`
+    // window.location.href = `mailto:dmssolar@gmail.com?subject=${subject}&body=${body}`
 
     // Reset form after sending
     setFormData({
@@ -136,7 +158,7 @@ export default function Careers() {
     <>
       <section id="careers" className="py-20 md:py-32">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-br from-accent/20 to-accent/10 rounded-xl p-12 border border-border">
+          <div className="bg-linear-to-br from-accent/20 to-accent/10 rounded-xl p-12 border border-border">
             <Briefcase className="w-16 h-16 text-accent mx-auto mb-6" />
 
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Career With Us</h2>
