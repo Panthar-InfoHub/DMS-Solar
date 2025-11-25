@@ -1,4 +1,5 @@
 import { Facebook, Youtube, Instagram, Linkedin } from "lucide-react"
+import Link from "next/link"
 
 export default function Footer() {
   return (
@@ -100,8 +101,9 @@ export default function Footer() {
 
         <div className="border-t border-primary-foreground/10 pt-8">
           <div className="text-center text-sm text-primary-foreground/70">
-            <p>© 2025 DMS Solars — EPC Company for Solar Energy Solutions.</p>
-            <p className="mt-2">Designed and Developed by Panthar Infohub Pvt. Ltd.</p>
+            <p>
+            © {new Date().getFullYear()} Designed and Developed By <Link href={'https://www.pantharinfohub.com'} target="_blank" className="font-bold" > Panthar InfoHub </Link>.
+          </p>
           </div>
         </div>
       </div>
