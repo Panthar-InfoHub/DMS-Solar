@@ -5,6 +5,7 @@ import type React from "react"
 import { Button } from "@/components/ui/button"
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react"
 import { useState } from "react"
+import { sendConnectMailToUser , sendConnectMailToClient } from "@/helpers/sendmail"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -23,13 +24,16 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    const dataToSend = {
+      name: formData.name,
+      email: formData.email,
+      city: formData.city,
+      message: formData.message,
+    }
 
-    // Create email content
-    const subject = `Contact Form Submission from ${formData.name}`
-    const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0ACity: ${formData.city}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`
-
-    // Open email client
-    window.open(`mailto:dmssolar@gmail.com?subject=${subject}&body=${body}`)
+    sendConnectMailToUser(dataToSend);
+    sendConnectMailToClient(dataToSend);
+    
 
     // Reset form
     setFormData({

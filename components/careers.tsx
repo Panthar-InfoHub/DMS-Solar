@@ -120,7 +120,6 @@ export default function Careers() {
       state : formData.state,
       city : formData.city,
       experience : formData.experience,
-      resume : fileName,
     }
     sendCareerMail(data);
     sendCareerMailToClient(data);
@@ -369,7 +368,7 @@ export default function Careers() {
             </div>
 
             {/* Resume Upload */}
-            <div className="space-y-2">
+            {/* <div className="space-y-2">
               <Label htmlFor="resume">Resume Upload *</Label>
               <div className="flex items-center gap-4">
                 <Input
@@ -390,7 +389,7 @@ export default function Careers() {
                   {fileName || "Choose file (PDF, DOC, DOCX)"}
                 </Button>
               </div>
-            </div>
+            </div> */}
 
             {/* Submit Button */}
             <div className="flex gap-4 pt-4">

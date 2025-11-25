@@ -56,7 +56,7 @@ export default function Products() {
     },
     {
       icon: Sun,
-      title: "Solar Panels",
+      title: "Solar Atta Chakki",
       description: "High-efficiency mono and poly modules",
       detailedContent: {
         subtitle: "The Shiny Rectangles",

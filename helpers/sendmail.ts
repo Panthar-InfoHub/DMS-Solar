@@ -93,3 +93,38 @@ export async function sendContactMailToUser(data : any) {
   });
   console.log("Message sent:", info.messageId);
 }
+
+// contact us mail funciton 
+export async function sendConnectMailToUser(data : any) {
+  const finalData = {
+      name : data.name || "No Name",
+      email : data.email || "No Email",
+      city : data.city || "No City",
+      message : data.message || "No Message",
+  }
+    const info = await transporter.sendMail({
+    from: 'connect.dmssolars@gmail.com',
+    to: `${finalData.email}`,
+    subject: `${finalData.name} thanks for contacting DMS Solar`,
+    text: `Hi ${finalData.name}, Thank you for reaching out to DMS Solar. We have received your message and will get back to you soon. Here is a copy of your message:\n\n${finalData.message}`, // plain‑text body
+    // html: "<b>Hello world?</b>", // HTML body
+  });
+  console.log("Message sent:", info.messageId);
+}
+
+export async function sendConnectMailToClient(data : any) {
+  const finalData = {
+      name : data.name || "No Name",
+      email : data.email || "No Email",
+      city : data.city || "No City",
+      message : data.message || "No Message",
+  }
+    const info = await transporter.sendMail({
+    from: 'connect.dmssolars@gmail.com',
+    to: `connect.dmssolars@gmail.com`,
+    subject: `${finalData.name} has contacted DMS Solar`,
+    text: `Name: ${finalData.name}\nEmail: ${finalData.email}\nCity: ${finalData.city}\nMessage: ${finalData.message}`, // plain‑text body
+    // html: "<b>Hello world?</b>", // HTML body
+  });
+  console.log("Message sent:", info.messageId);
+}
