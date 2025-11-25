@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Zap, Award, Wrench, MapPin, ShieldCheck, DollarSign, Headphones } from 'lucide-react'
 import { useState } from "react"
 import ContactModal from "./contact-modal"
+import Image from "next/image"
 
-export default function Hero() {
+export default function   Hero() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   const whyChooseFeatures = [
@@ -51,11 +52,13 @@ export default function Hero() {
     <>
       <section id="home" className="relative overflow-hidden pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="absolute inset-0 z-0">
-          <div
-            className="absolute inset-0 backdrop-opacity-100 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: "url(/website-images/hero-section.jpg)",
-            }}
+          <Image
+            src="/website-images/hero-section.jpg"
+            alt="Solar panels installation"
+            fill
+            priority
+            quality={90}
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/60 to-background/70" />
         </div>

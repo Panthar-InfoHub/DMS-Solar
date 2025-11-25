@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { Zap, Home, Users, TrendingUp, Check } from "lucide-react"
+import Image from "next/image"
 
 export default function Benefits() {
   const [isVisible, setIsVisible] = useState(false)
@@ -29,11 +30,13 @@ export default function Benefits() {
     <section id="benefits" className="py-24 md:py-40 relative" ref={sectionRef}>
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/website-images/home-page-image-9.jpg"
-          alt="Solar Panels Background"
-          className="w-full h-full object-cover"
-        />
+        <Image
+                  src="/website-images/home-page-image-9.jpg"
+                  alt="Solar panels installation"
+                  fill
+                  quality={90}
+                  className="object-cover"
+                />
         <div className="absolute inset-0 bg-gradient-to-b from-[#fbf6de]/95 via-[#fbf6de]/90 to-[#fbf6de]/95" />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

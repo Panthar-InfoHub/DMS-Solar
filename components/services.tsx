@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ShoppingCart, Lightbulb, Wrench, Cpu, Settings } from 'lucide-react'
+import Image from "next/image"
 
 const services = [
   {
@@ -60,12 +61,13 @@ export default function Services() {
   return (
     <section id="services" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 opacity-40 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/website-images/home-page-image-2.jpg')",
-          }}
-        />
+        <Image
+                  src="/website-images/home-page-image-2.jpg"
+                  alt="Solar panels installation"
+                  fill
+                  quality={90}
+                  className="object-cover"
+                />
         <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/60 to-background/70" />
       </div>
 
