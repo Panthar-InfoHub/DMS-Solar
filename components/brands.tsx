@@ -5,7 +5,7 @@ import Image from "next/image"
 export default function Brands() {
   const brands = [
     { name: "Luminous", logo: "/brands/luminous.svg" },
-    { name: "TATA", logo: "/brands/tata-solar-logo.png" },
+    { name: "TATA", logo: "/brands/tata-power-logo.jpeg" },
     { name: "Adani", logo: "/brands/aadani-updated-image.jpeg" },
     { name: "Nexus", logo: "/brands/nexus.svg" },
     { name: "Invergy", logo: "/brands/invergy.svg" },
@@ -13,7 +13,7 @@ export default function Brands() {
     { name: "Waaree", logo: "/brands/waaree.svg" },
     { name: "Crompton", logo: "/brands/crompton.svg" },
     { name: "INVT", logo: "/brands/invt.svg" },
-    { name: "STATCON ENERGIAA", logo: "/brands/Statcon.png" },
+    { name: "STATCON ENERGIAA", logo: "/brands/statcon-logo.png" },
   ]
 
   return (
